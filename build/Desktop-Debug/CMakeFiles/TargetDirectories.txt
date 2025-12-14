@@ -1,0 +1,5 @@
+/home/savvich/ISPortfolio/build/Desktop-Debug/CMakeFiles/ISPortfolio_Desktop.dir
+/home/savvich/ISPortfolio/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/savvich/ISPortfolio/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/savvich/ISPortfolio/build/Desktop-Debug/CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps.dir
+/home/savvich/ISPortfolio/build/Desktop-Debug/CMakeFiles/ISPortfolio_Desktop_autogen.dir

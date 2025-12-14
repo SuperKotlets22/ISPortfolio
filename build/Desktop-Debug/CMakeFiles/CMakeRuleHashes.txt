@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+d2f63f6f2c00456b6e5290b2d70d606e CMakeFiles/ISPortfolio_Desktop_autogen
+d2f63f6f2c00456b6e5290b2d70d606e CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps
+3be5baf6ca75d66f704563a9df714e05 ISPortfolio_Desktop_autogen/timestamp
