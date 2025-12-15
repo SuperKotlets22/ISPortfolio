@@ -67,9 +67,9 @@ include CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps.dir/compiler_depen
 include CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
+CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2
 CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
-CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2
 
 ISPortfolio_Desktop_autogen_timestamp_deps: CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps
 ISPortfolio_Desktop_autogen_timestamp_deps: CMakeFiles/ISPortfolio_Desktop_autogen_timestamp_deps.dir/build.make

@@ -15,7 +15,9 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1,
+						2
 					]
 				}
 			],
@@ -30,7 +32,9 @@
 					"name" : "ISPortfolio_Desktop",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1,
+						2
 					]
 				}
 			],
@@ -39,8 +43,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ISPortfolio_Desktop::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ISPortfolio_Desktop-Debug-bbcc8974d83966ab39e5.json",
+					"jsonFile" : "target-ISPortfolio_Desktop-Debug-e6b03d501383750b6f1c.json",
 					"name" : "ISPortfolio_Desktop",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ISPortfolio_Desktop_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ISPortfolio_Desktop_autogen-Debug-85a56ce24c437b0834be.json",
+					"name" : "ISPortfolio_Desktop_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ISPortfolio_Desktop_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ISPortfolio_Desktop_autogen_timestamp_deps-Debug-c31357c068f345ab994c.json",
+					"name" : "ISPortfolio_Desktop_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
 			]

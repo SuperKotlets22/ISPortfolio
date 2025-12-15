@@ -201,21 +201,27 @@
 			null
 		],
 		[
+			"/home/savvich/ISPortfolio/EmployerWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_EmployerWindow.cpp",
+			null
+		],
+		[
 			"/home/savvich/ISPortfolio/LoginWindow.h",
 			"MU",
 			"EWIEGA46WW/moc_LoginWindow.cpp",
 			null
 		],
 		[
-			"/home/savvich/ISPortfolio/MainWindow.h",
-			"MU",
-			"EWIEGA46WW/moc_MainWindow.cpp",
-			null
-		],
-		[
 			"/home/savvich/ISPortfolio/Security.h",
 			"MU",
 			"EWIEGA46WW/moc_Security.cpp",
+			null
+		],
+		[
+			"/home/savvich/ISPortfolio/SpecialistWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_SpecialistWindow.cpp",
 			null
 		]
 	],

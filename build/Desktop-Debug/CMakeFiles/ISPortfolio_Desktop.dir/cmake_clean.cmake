@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/savvich/ISPortfolio/ISPortfolio_Desktop"
+  "/home/savvich/ISPortfolio/ISPortfolio_Desktop.pdb"
   "CMakeFiles/ISPortfolio_Desktop_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/ISPortfolio_Desktop_autogen.dir/ParseCache.txt"
   "ISPortfolio_Desktop_autogen"
@@ -10,8 +12,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ISPortfolio_Desktop.dir/Security.cpp.o.d"
   "CMakeFiles/ISPortfolio_Desktop.dir/main.cpp.o"
   "CMakeFiles/ISPortfolio_Desktop.dir/main.cpp.o.d"
-  "ISPortfolio_Desktop"
-  "ISPortfolio_Desktop.pdb"
   "ISPortfolio_Desktop_autogen/mocs_compilation.cpp"
   "ISPortfolio_Desktop_autogen/timestamp"
 )

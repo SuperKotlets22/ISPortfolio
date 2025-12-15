@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ISPortfolio_Desktop"
+			"path" : "/home/savvich/ISPortfolio/ISPortfolio_Desktop"
 		}
 	],
 	"backtrace" : 1,
@@ -42,19 +42,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 24,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 26,
+				"line" : 30,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 14,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
@@ -345,21 +345,22 @@
 				3,
 				5,
 				6,
-				7
+				7,
+				8
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				8
+				9
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				9
+				10
 			]
 		}
 	],
@@ -407,7 +408,12 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "MainWindow.h",
+			"path" : "SpecialistWindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "EmployerWindow.h",
 			"sourceGroupIndex" : 1
 		},
 		{

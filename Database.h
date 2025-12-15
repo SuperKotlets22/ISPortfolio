@@ -5,6 +5,21 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QVariant>
+#include <QDate>
+
+// Структура для передачи данных профиля одним объектом
+struct UserProfile {
+    QString surname, name, patronymic;
+    QString city, citizenship;
+    QString gender; // Муж/Жен
+    QDate birthDate;
+    QString jobTitle;
+    int salary;
+    QString currency; // Рубли/USD
+    QString schedule; // Полный день/Удаленка
+    bool readyToMove;
+};
 
 class DatabaseManager {
 public:
@@ -12,18 +27,25 @@ public:
     bool connectToDb();
     void initDb();
 
-    // Пользователи
-    bool registerUser(const QString &login, const QString &password, const QString &email, const QString &phone);
-    bool loginUser(const QString &login, const QString &password, int &userId);
-    bool getUserProfile(int userId, QString &email, QString &phone);
+    // --- Auth ---
+    bool registerUser(const QString &login, const QString &password, const QString &email, const QString &phone, const QString &role);
+    bool loginUser(const QString &login, const QString &password, int &userId, QString &role);
+    bool getUserContacts(int userId, QString &email, QString &phone);
+    QList<QPair<int, QString>> getAllSpecialists(); // Возвращает ID и "Фамилия Имя (Должность)"
 
-    // Портфолио (Проекты)
-    bool addProject(int userId, const QString &title, const QString &role, const QString &date, const QString &desc);
-    QSqlQuery getProjects(int userId);
+    // --- Profile (Личные данные) ---
+    bool saveProfile(int userId, const UserProfile &p);
+    bool getProfile(int userId, UserProfile &p);
 
-    // Опыт работы (Резюме)
-    bool addExperience(int userId, const QString &company, const QString &position, const QString &years, const QString &achievements);
+    // --- Education ---
+    bool addEducation(int userId, const QString &inst, const QString &faculty, const QString &spec, int year);
+    QSqlQuery getEducation(int userId);
+    bool deleteEducation(int id);
+
+    // --- Experience ---
+    bool addExperience(int userId, const QString &org, const QString &pos, QDate start, QDate end, const QString &duties);
     QSqlQuery getExperience(int userId);
+    bool deleteExperience(int id);
 
 private:
     DatabaseManager() {}
