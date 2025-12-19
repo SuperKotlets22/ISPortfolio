@@ -45,23 +45,21 @@ public:
         card->setFixedWidth(460); 
         card->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum); 
         
-        // === ВОТ ЗДЕСЬ ИЗМЕНЕНЫ ЦВЕТА ===
-        // === СТИЛЬ "MODERN DARK" (Как в Gemini/Discord) ===
         card->setStyleSheet(
-            // 1. Фон карточки - Глубокий черный (как на скриншоте вокруг поля)
+            // 1. Фон карточки - 
             "QFrame#AuthCard { "
-            "    background-color: #09090b; " /* Почти черный */
+            "    background-color: #09090b; " 
             "    border-radius: 24px; "
-            "    border: 1px solid #27272a; " /* Едва заметная граница карточки */
+            "    border: 1px solid #27272a; " 
             "}"
             
-            // 2. Поля ввода - Явно СВЕТЛЕЕ фона (Серый)
+            // 2. Поля ввода 
             "QLineEdit { "
-            "    background-color: #27272a; " /* <-- ТОТ САМЫЙ СВЕТЛЫЙ СЕРЫЙ */
-            "    border: none; "              /* Убираем рамку, оставляем только "плашку" */
-            "    border-radius: 12px; "       /* Скругление */
-            "    padding: 16px; "             /* Простор внутри */
-            "    color: #ececf1; "            /* Бело-серый текст (не бьет по глазам) */
+            "    background-color: #27272a; " 
+            "    border: none; "              
+            "    border-radius: 12px; "       
+            "    padding: 16px; "             
+            "    color: #ececf1; "            
             "    font-size: 15px; "
             "    margin-bottom: 16px; "
             "}"

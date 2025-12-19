@@ -83,7 +83,6 @@ bool DatabaseManager::getUserContacts(int uid, QString &e, QString &ph) {
 QList<QPair<int, QString>> DatabaseManager::getAllSpecialists() {
     QList<QPair<int, QString>> list;
     QSqlQuery q;
-    // Джойним с профилем, чтобы показать Имя и Должность в списке
     q.exec("SELECT u.id, p.surname, p.name, p.job_title "
            "FROM users u LEFT JOIN profiles p ON u.id = p.user_id "
            "WHERE u.role = 'specialist'");

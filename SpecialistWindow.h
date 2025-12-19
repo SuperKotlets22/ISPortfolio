@@ -57,7 +57,6 @@ public:
         topPanel->addWidget(title); topPanel->addStretch(); topPanel->addWidget(btnExit);
         mainLayout->addLayout(topPanel);
 
-        // --- ОБЛАСТЬ ПРОКРУТКИ (Т.к. форма длинная) ---
         QScrollArea *scroll = new QScrollArea();
         scroll->setWidgetResizable(true);
         scroll->setFrameShape(QFrame::NoFrame);
@@ -147,7 +146,6 @@ public:
         expLayout->addWidget(tableExp); expLayout->addLayout(expBtns);
         scrollLayout->addWidget(groupExp);
 
-        // КНОПКА СОХРАНИТЬ (Внизу скролла)
         QPushButton *btnSave = new QPushButton("СОХРАНИТЬ РЕЗЮМЕ");
         btnSave->setStyleSheet("background-color: #388e3c; font-size: 16px; padding: 15px; font-weight: bold;");
         scrollLayout->addWidget(btnSave);
@@ -155,7 +153,6 @@ public:
         scroll->setWidget(scrollContent);
         mainLayout->addWidget(scroll);
 
-        // --- ЛОГИКА ---
         loadAllData();
 
         connect(btnExit, &QPushButton::clicked, [this](){ emit logoutRequested(); this->close(); });
