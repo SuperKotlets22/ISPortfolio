@@ -147,12 +147,13 @@ ISPortfolio_Desktop_EXTERNAL_OBJECTS =
 /home/savvich/ISPortfolio/ISPortfolio_Desktop: CMakeFiles/ISPortfolio_Desktop.dir/Database.cpp.o
 /home/savvich/ISPortfolio/ISPortfolio_Desktop: CMakeFiles/ISPortfolio_Desktop.dir/Security.cpp.o
 /home/savvich/ISPortfolio/ISPortfolio_Desktop: CMakeFiles/ISPortfolio_Desktop.dir/build.make
-/home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 /home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2
+/home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libQt6PrintSupport.so.6.4.2
+/home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 /home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2
+/home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 /home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libGLX.so
 /home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libOpenGL.so
-/home/savvich/ISPortfolio/ISPortfolio_Desktop: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 /home/savvich/ISPortfolio/ISPortfolio_Desktop: CMakeFiles/ISPortfolio_Desktop.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/savvich/ISPortfolio/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable /home/savvich/ISPortfolio/ISPortfolio_Desktop"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ISPortfolio_Desktop.dir/link.txt --verbose=$(VERBOSE)

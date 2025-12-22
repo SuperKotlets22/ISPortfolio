@@ -8,17 +8,33 @@
 #include <QVariant>
 #include <QDate>
 
-// Структура для передачи данных профиля одним объектом
+// --- ORM СТРУКТУРЫ ---
 struct UserProfile {
     QString surname, name, patronymic;
-    QString city, citizenship;
-    QString gender; // Муж/Жен
+    QString city, citizenship, gender;
     QDate birthDate;
-    QString jobTitle;
+    QString jobTitle, currency, schedule;
     int salary;
-    QString currency; // Рубли/USD
-    QString schedule; // Полный день/Удаленка
     bool readyToMove;
+};
+
+struct EducationData {
+    int id;
+    int userId;
+    QString institution;
+    QString faculty;
+    QString specialty;
+    int year;
+};
+
+struct ExperienceData {
+    int id;
+    int userId;
+    QString orgName;
+    QString position;
+    QDate startDate;
+    QDate endDate;
+    QString duties;
 };
 
 class DatabaseManager {
@@ -27,24 +43,24 @@ public:
     bool connectToDb();
     void initDb();
 
-    // --- Auth ---
+    // Auth
     bool registerUser(const QString &login, const QString &password, const QString &email, const QString &phone, const QString &role);
     bool loginUser(const QString &login, const QString &password, int &userId, QString &role);
     bool getUserContacts(int userId, QString &email, QString &phone);
-    QList<QPair<int, QString>> getAllSpecialists(); // Возвращает ID и "Фамилия Имя (Должность)"
+    QList<QPair<int, QString>> getAllSpecialists();
 
-    // --- Profile (Личные данные) ---
+    // Profile
     bool saveProfile(int userId, const UserProfile &p);
     bool getProfile(int userId, UserProfile &p);
 
-    // --- Education ---
-    bool addEducation(int userId, const QString &inst, const QString &faculty, const QString &spec, int year);
-    QSqlQuery getEducation(int userId);
+    // Education (ORM)
+    bool addEducation(const EducationData &data);
+    QList<EducationData> getEducationList(int userId);
     bool deleteEducation(int id);
 
-    // --- Experience ---
-    bool addExperience(int userId, const QString &org, const QString &pos, QDate start, QDate end, const QString &duties);
-    QSqlQuery getExperience(int userId);
+    // Experience (ORM)
+    bool addExperience(const ExperienceData &data);
+    QList<ExperienceData> getExperienceList(int userId);
     bool deleteExperience(int id);
 
 private:

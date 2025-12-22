@@ -1,6 +1,7 @@
 #define ABI_ID "ELF"
 #define QT_CORE_LIB 1
 #define QT_GUI_LIB 1
+#define QT_PRINTSUPPORT_LIB 1
 #define QT_SQL_LIB 1
 #define QT_WIDGETS_LIB 1
 #define SIZEOF_DPTR (sizeof(void*))

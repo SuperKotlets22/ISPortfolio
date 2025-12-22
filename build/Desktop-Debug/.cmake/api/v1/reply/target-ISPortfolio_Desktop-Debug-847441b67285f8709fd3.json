@@ -42,19 +42,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 28,
+				"line" : 23,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 17,
+				"line" : 12,
 				"parent" : 0
 			},
 			{
@@ -200,6 +200,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"define" : "QT_PRINTSUPPORT_LIB"
+				},
+				{
+					"backtrace" : 2,
 					"define" : "QT_SQL_LIB"
 				},
 				{
@@ -242,6 +246,11 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt6/QtSql"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/usr/include/x86_64-linux-gnu/qt6/QtPrintSupport"
 				}
 			],
 			"language" : "CXX",
@@ -288,17 +297,27 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt6PrintSupport.so.6.4.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 9,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2",
 				"role" : "libraries"
 			},
 			{
@@ -309,11 +328,6 @@
 			{
 				"backtrace" : 25,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libOpenGL.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 9,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2",
 				"role" : "libraries"
 			}
 		],

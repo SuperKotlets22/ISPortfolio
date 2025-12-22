@@ -26,18 +26,14 @@ class SpecialistWindow : public QMainWindow {
     Q_OBJECT
     int userId;
 
-    // Поля формы (Профиль)
     QLineEdit *editSurname, *editName, *editPatronymic;
     QLineEdit *editCity, *editCitizenship;
     QComboBox *comboGender;
     QDateEdit *dateBirth;
-    
     QLineEdit *editJobTitle;
     QSpinBox *spinSalary;
     QComboBox *comboSchedule;
     QCheckBox *checkMove;
-
-    // Таблицы
     QTableWidget *tableEdu;
     QTableWidget *tableExp;
 
@@ -48,7 +44,6 @@ public:
         setCentralWidget(central);
         QVBoxLayout *mainLayout = new QVBoxLayout(central);
 
-        // --- Верхняя панель ---
         QHBoxLayout *topPanel = new QHBoxLayout();
         QLabel *title = new QLabel("Мое Резюме");
         title->setStyleSheet("font-size: 24px; font-weight: bold; color: #61dafb;");
@@ -65,16 +60,11 @@ public:
         QVBoxLayout *scrollLayout = new QVBoxLayout(scrollContent);
         scrollLayout->setSpacing(20);
 
-        // 1. Блок "Основная информация"
+        // Блок 1
         QGroupBox *groupBasic = new QGroupBox("Основная и Личная информация");
-        groupBasic->setStyleSheet("QGroupBox { font-weight: bold; border: 1px solid #555; border-radius: 5px; margin-top: 10px; } QGroupBox::title { subcontrol-origin: margin; left: 10px; padding: 0 5px; }");
         QFormLayout *formBasic = new QFormLayout(groupBasic);
-        formBasic->setLabelAlignment(Qt::AlignRight);
-        
         editSurname = new QLineEdit; editName = new QLineEdit; editPatronymic = new QLineEdit;
-        formBasic->addRow("Фамилия:", editSurname);
-        formBasic->addRow("Имя:", editName);
-        formBasic->addRow("Отчество:", editPatronymic);
+        formBasic->addRow("Фамилия:", editSurname); formBasic->addRow("Имя:", editName); formBasic->addRow("Отчество:", editPatronymic);
         
         QHBoxLayout *row2 = new QHBoxLayout();
         editCity = new QLineEdit; editCity->setPlaceholderText("Например: Москва");
@@ -85,18 +75,16 @@ public:
 
         QHBoxLayout *row3 = new QHBoxLayout();
         comboGender = new QComboBox(); comboGender->addItems({"Мужской", "Женский"});
-        dateBirth = new QDateEdit(); dateBirth->setCalendarPopup(true); dateBirth->setDisplayFormat("dd.MM.yyyy"); dateBirth->setDate(QDate(2000, 1, 1));
+        dateBirth = new QDateEdit(); dateBirth->setCalendarPopup(true); dateBirth->setDisplayFormat("dd.MM.yyyy");
         row3->addWidget(new QLabel("Пол:")); row3->addWidget(comboGender);
         row3->addWidget(new QLabel("Дата рождения:")); row3->addWidget(dateBirth);
         formBasic->addRow(row3);
         scrollLayout->addWidget(groupBasic);
 
-        // 2. Блок "Параметры работы"
+        // Блок 2
         QGroupBox *groupJob = new QGroupBox("Желаемая должность и условия");
-        groupJob->setStyleSheet(groupBasic->styleSheet());
         QFormLayout *formJob = new QFormLayout(groupJob);
-        
-        editJobTitle = new QLineEdit; editJobTitle->setPlaceholderText("Например: Специалист по ИБ");
+        editJobTitle = new QLineEdit;
         formJob->addRow("Должность:", editJobTitle);
         
         QHBoxLayout *rowSal = new QHBoxLayout();
@@ -105,44 +93,34 @@ public:
         rowSal->addWidget(new QLabel("Зарплата:")); rowSal->addWidget(spinSalary);
         rowSal->addWidget(new QLabel("График:")); rowSal->addWidget(comboSchedule);
         formJob->addRow(rowSal);
-        
-        checkMove = new QCheckBox("Готов к переезду");
-        formJob->addRow("", checkMove);
+        checkMove = new QCheckBox("Готов к переезду"); formJob->addRow("", checkMove);
         scrollLayout->addWidget(groupJob);
 
-        // 3. Блок "Образование" (Таблица)
+        // Блок 3 (Образование)
         QGroupBox *groupEdu = new QGroupBox("Образование");
-        groupEdu->setStyleSheet(groupBasic->styleSheet());
         QVBoxLayout *eduLayout = new QVBoxLayout(groupEdu);
-        
         tableEdu = new QTableWidget(0, 4);
         tableEdu->setHorizontalHeaderLabels({"Учебное заведение", "Факультет", "Специальность", "Год"});
         tableEdu->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         tableEdu->setFixedHeight(150);
-        
         QHBoxLayout *eduBtns = new QHBoxLayout();
         QPushButton *btnAddEdu = new QPushButton("Добавить ВУЗ");
         QPushButton *btnDelEdu = new QPushButton("Удалить строку");
         eduBtns->addWidget(btnAddEdu); eduBtns->addWidget(btnDelEdu); eduBtns->addStretch();
-        
         eduLayout->addWidget(tableEdu); eduLayout->addLayout(eduBtns);
         scrollLayout->addWidget(groupEdu);
 
-        // 4. Блок "Опыт работы" (Таблица)
+        // Блок 4 (Опыт)
         QGroupBox *groupExp = new QGroupBox("Опыт работы");
-        groupExp->setStyleSheet(groupBasic->styleSheet());
         QVBoxLayout *expLayout = new QVBoxLayout(groupExp);
-        
         tableExp = new QTableWidget(0, 4);
         tableExp->setHorizontalHeaderLabels({"Организация", "Должность", "Период", "Обязанности"});
         tableExp->horizontalHeader()->setSectionResizeMode(3, QHeaderView::Stretch);
         tableExp->setFixedHeight(200);
-
         QHBoxLayout *expBtns = new QHBoxLayout();
         QPushButton *btnAddExp = new QPushButton("Добавить место работы");
         QPushButton *btnDelExp = new QPushButton("Удалить строку");
         expBtns->addWidget(btnAddExp); expBtns->addWidget(btnDelExp); expBtns->addStretch();
-
         expLayout->addWidget(tableExp); expLayout->addLayout(expBtns);
         scrollLayout->addWidget(groupExp);
 
@@ -157,10 +135,8 @@ public:
 
         connect(btnExit, &QPushButton::clicked, [this](){ emit logoutRequested(); this->close(); });
         connect(btnSave, &QPushButton::clicked, this, &SpecialistWindow::saveAllData);
-        
         connect(btnAddEdu, &QPushButton::clicked, this, &SpecialistWindow::addEduDialog);
         connect(btnDelEdu, &QPushButton::clicked, [this](){ deleteRow(tableEdu, "education"); });
-        
         connect(btnAddExp, &QPushButton::clicked, this, &SpecialistWindow::addExpDialog);
         connect(btnDelExp, &QPushButton::clicked, [this](){ deleteRow(tableExp, "experience"); });
     }
@@ -170,7 +146,6 @@ signals:
 
 private:
     void loadAllData() {
-        // Профиль
         UserProfile p;
         if(DatabaseManager::instance().getProfile(userId, p)) {
             editSurname->setText(p.surname); editName->setText(p.name); editPatronymic->setText(p.patronymic);
@@ -180,29 +155,28 @@ private:
             comboSchedule->setCurrentText(p.schedule); checkMove->setChecked(p.readyToMove);
         }
 
-        // Образование
+        // ORM: Загрузка образования
         tableEdu->setRowCount(0);
-        QSqlQuery qEdu = DatabaseManager::instance().getEducation(userId);
-        while(qEdu.next()) {
+        auto eduList = DatabaseManager::instance().getEducationList(userId);
+        for(const auto &e : eduList) {
             int r = tableEdu->rowCount(); tableEdu->insertRow(r);
-            tableEdu->setItem(r, 0, new QTableWidgetItem(qEdu.value(0).toString()));
-            tableEdu->setItem(r, 1, new QTableWidgetItem(qEdu.value(1).toString()));
-            tableEdu->setItem(r, 2, new QTableWidgetItem(qEdu.value(2).toString()));
-            tableEdu->setItem(r, 3, new QTableWidgetItem(qEdu.value(3).toString()));
-            tableEdu->item(r, 0)->setData(Qt::UserRole, qEdu.value(4)); // ID записи
+            tableEdu->setItem(r, 0, new QTableWidgetItem(e.institution));
+            tableEdu->setItem(r, 1, new QTableWidgetItem(e.faculty));
+            tableEdu->setItem(r, 2, new QTableWidgetItem(e.specialty));
+            tableEdu->setItem(r, 3, new QTableWidgetItem(QString::number(e.year)));
+            tableEdu->item(r, 0)->setData(Qt::UserRole, e.id);
         }
 
-        // Опыт
+        // ORM: Загрузка опыта
         tableExp->setRowCount(0);
-        QSqlQuery qExp = DatabaseManager::instance().getExperience(userId);
-        while(qExp.next()) {
+        auto expList = DatabaseManager::instance().getExperienceList(userId);
+        for(const auto &e : expList) {
             int r = tableExp->rowCount(); tableExp->insertRow(r);
-            tableExp->setItem(r, 0, new QTableWidgetItem(qExp.value(0).toString()));
-            tableExp->setItem(r, 1, new QTableWidgetItem(qExp.value(1).toString()));
-            QString period = qExp.value(2).toDate().toString("MM.yyyy") + " - " + qExp.value(3).toDate().toString("MM.yyyy");
-            tableExp->setItem(r, 2, new QTableWidgetItem(period));
-            tableExp->setItem(r, 3, new QTableWidgetItem(qExp.value(4).toString()));
-            tableExp->item(r, 0)->setData(Qt::UserRole, qExp.value(5)); // ID записи
+            tableExp->setItem(r, 0, new QTableWidgetItem(e.orgName));
+            tableExp->setItem(r, 1, new QTableWidgetItem(e.position));
+            tableExp->setItem(r, 2, new QTableWidgetItem(e.startDate.toString("MM.yyyy") + " - " + e.endDate.toString("MM.yyyy")));
+            tableExp->setItem(r, 3, new QTableWidgetItem(e.duties));
+            tableExp->item(r, 0)->setData(Qt::UserRole, e.id);
         }
     }
 
@@ -214,11 +188,8 @@ private:
         p.jobTitle = editJobTitle->text(); p.salary = spinSalary->value();
         p.schedule = comboSchedule->currentText(); p.readyToMove = checkMove->isChecked();
         
-        if(DatabaseManager::instance().saveProfile(userId, p)) {
-            QMessageBox::information(this, "Успех", "Резюме сохранено!");
-        } else {
-            QMessageBox::critical(this, "Ошибка", "Не удалось сохранить данные");
-        }
+        if(DatabaseManager::instance().saveProfile(userId, p)) QMessageBox::information(this, "Успех", "Резюме сохранено!");
+        else QMessageBox::critical(this, "Ошибка", "Не удалось сохранить данные");
     }
 
     void addEduDialog() {
@@ -232,8 +203,9 @@ private:
         connect(b, &QDialogButtonBox::accepted, &d, &QDialog::accept);
         connect(b, &QDialogButtonBox::rejected, &d, &QDialog::reject);
         if(d.exec() == QDialog::Accepted) {
-            DatabaseManager::instance().addEducation(userId, i->text(), f->text(), s->text(), y->value());
-            loadAllData(); // Перезагрузка таблицы
+            EducationData edu; edu.userId = userId; edu.institution = i->text(); edu.faculty = f->text(); edu.specialty = s->text(); edu.year = y->value();
+            DatabaseManager::instance().addEducation(edu);
+            loadAllData();
         }
     }
 
@@ -251,7 +223,8 @@ private:
         connect(b, &QDialogButtonBox::accepted, &d, &QDialog::accept);
         connect(b, &QDialogButtonBox::rejected, &d, &QDialog::reject);
         if(d.exec() == QDialog::Accepted) {
-            DatabaseManager::instance().addExperience(userId, o->text(), p->text(), ds->date(), de->date(), du->toPlainText());
+            ExperienceData exp; exp.userId = userId; exp.orgName = o->text(); exp.position = p->text(); exp.startDate = ds->date(); exp.endDate = de->date(); exp.duties = du->toPlainText();
+            DatabaseManager::instance().addExperience(exp);
             loadAllData();
         }
     }
