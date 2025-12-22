@@ -112,8 +112,6 @@ private:
         UserProfile p;
         bool hasProfile = DatabaseManager::instance().getProfile(uid, p);
 
-        // === ГЕНЕРАЦИЯ HTML С КРУПНЫМИ ШРИФТАМИ ===
-        // font-size задаем в pt (пунктах), чтобы было крупно
         QString html = "<html><body style='font-family: Arial, sans-serif; color: #e0e0e0; background-color: #1e1e1e; font-size: 14pt;'>";
         
         // Шапка
